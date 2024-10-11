@@ -4,7 +4,7 @@ const db = require('../models');
 const bcrypt = require('bcryptjs');
 
 router.get('/', (req, res) => {
-    res.render('pages/signup/index', { title: 'Sign Up' });
+    res.render('pages/signin/index', { title: 'Sign In' });
 });
 
 module.exports = router;

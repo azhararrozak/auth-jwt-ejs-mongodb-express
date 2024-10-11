@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const signupRouter = require('./src/routes/signup');
+const signinRouter = require('./src/routes/signin');
 
 const app = express();
 
@@ -17,10 +18,11 @@ app.set("views", path.join(__dirname, "src/views"));
 
 
 app.get('/', (req, res) => {
-    res.render('homepage/index');
+    res.render('pages/homepage/index', { title: 'Home' });
 });
 
 app.use('/signup', signupRouter);
+app.use('/signin', signinRouter);
 
 app.listen(3000, () => {
    console.log('Server is running on port 3000');
